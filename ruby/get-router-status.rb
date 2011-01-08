@@ -1,8 +1,11 @@
 #! /usr/bin/ruby
 
+require 'pathname'
 require 'net/http'
 require 'uri'
 require 'net/telnet'
+# Ensure the script can be executed from anywhere
+$: << File.dirname( __FILE__) 
 require 'json'
 
 # Exception
