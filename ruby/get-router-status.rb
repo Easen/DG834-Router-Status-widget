@@ -106,4 +106,4 @@ rescue
 end
 
 # Encode to JSON
-print JSON::dump(output)
+puts JSON::dump(output)
