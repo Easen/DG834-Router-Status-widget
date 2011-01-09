@@ -74,11 +74,9 @@ class DG384
 		end
 		
 		# Parse the response
-		adslInfo = adslInfo.split(/\n/)[1, 8]
+		adslInfo = adslInfo.split(/\n/)[1, 9]
 		lookup = @@mapping.invert
-
 		values = Hash[(@@mapping.values)]
-
 		adslInfo.each {|line| 
 			value = line.split(/\s+:\s+/)
 			# Match the mapping
