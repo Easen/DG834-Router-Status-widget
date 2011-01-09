@@ -112,7 +112,7 @@ if (window.widget) {
 
 function refreshAdslInfo(event)
 {
-    var adslInfoCommand = widget.system("./get-router-status.rb", doneAdslInfo);
+    var adslInfoCommand = widget.system("./ruby/get-router-status.rb", doneAdslInfo);
     adslInfoCommand.onreadoutput = processAdslInfo;
     
 }
