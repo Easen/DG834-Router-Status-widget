@@ -1,0 +1,8 @@
+DG834 Router Status widget
+
+
+Setup:
+ ./setup.sh
+
+Clean:
+ ./clean.sh
