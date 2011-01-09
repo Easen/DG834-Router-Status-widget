@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp ruby widget/DG384\ Adsl\ Status.dcproj/project/widget.wdgt/
+cp -R ruby widget/DG834\ Adsl\ Status.dcproj/project/widget.wdgt/

@@ -9,11 +9,11 @@ $: << File.dirname( __FILE__)
 require 'json'
 
 # Exception
-class DG384Exception < RuntimeError
+class DG834Exception < RuntimeError
 end
 
 
-class DG384
+class DG834
 	attr_accessor :host, :adminUser, :adminPassword
 	
 	# Mapping of the 'adsl info' bash command
@@ -56,7 +56,7 @@ class DG384
  	def getADSLInfo
  		# Enabled Debug mode for telnet access
  		if false == self.enableDebugMode 
- 			raise DG384Exception, "Could not enable DEBUG mode", caller
+ 			raise DG834Exception, "Could not enable DEBUG mode", caller
  		end
  		
  		# Connect to the router via telnet and run 'adsl info'
@@ -70,7 +70,7 @@ class DG384
 		
 		# Check the response
 		if adslInfo == nil
-			raise DG384Exception, "Could not get ADSL Info", caller
+			raise DG834Exception, "Could not get ADSL Info", caller
 		end
 		
 		# Parse the response
@@ -91,9 +91,9 @@ end
 
 # Check if any arguments have been passed in, if so use them
 if ARGV.length == 3 then
-	router = DG384.new(ARGV[0], ARGV[1], ARGV[2])
+	router = DG834.new(ARGV[0], ARGV[1], ARGV[2])
 else
-	router = DG384.new
+	router = DG834.new
 end
 
 # Output the adslInfo

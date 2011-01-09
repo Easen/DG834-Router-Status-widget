@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm -fr widget/DG384\ Adsl\ Status.dcproj/project/widget.wdgt/ruby
+rm -fr widget/DG834\ Adsl\ Status.dcproj/project/widget.wdgt/ruby
