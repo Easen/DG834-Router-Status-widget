@@ -18,15 +18,15 @@ class DG834
 	
 	# Mapping of the 'adsl info' bash command
 	@@mapping = Hash[
-		"status" => "Current Training Status",
-		"mode" => "Current trained adsl mode",
-		"trainedPath" => "Current trained adsl path",
-		"downstreamBitRate" => "Downstream Bit Rate",
-		"downstreamNoiseMargin" => "Downstream Noise Margin",
-		"downstreamAttenuation" => "Downstream Attenuation",
-		"upstreamBitRate" => "Upstream Bit Rate",
-		"upstreamNoiseMargin" => "Upstream Noise Margin",
-		"upstreamAttenuation" => "Upstream Attenuation"
+		:status 			   => "Current Training Status",
+		:mode                  => "Current trained adsl mode",
+		:trainedPath           => "Current trained adsl path",
+		:downstreamBitRate     => "Downstream Bit Rate",
+		:downstreamNoiseMargin => "Downstream Noise Margin",
+		:downstreamAttenuation => "Downstream Attenuation",
+		:upstreamBitRate       => "Upstream Bit Rate",
+		:upstreamNoiseMargin   => "Upstream Noise Margin",
+		:upstreamAttenuation   => "Upstream Attenuation"
 	]
 	
 	def initialize(host = "192.168.0.1", adminUser = "admin", adminPassword = "password")
@@ -38,7 +38,7 @@ class DG834
  	def enableDebugMode
  		url = URI.parse('http://' + @host + '/setup.cgi?todo=debug')
 
-		req = Net::HTTP::Get.new(url.path)
+		req = Net::HTTP::Get.new(url.path + '?' + url.query)
 		
 		req.basic_auth @adminUser, @adminPassword
 		res = Net::HTTP.new(url.host, url.port).start {|http| 
@@ -100,7 +100,7 @@ end
 begin
 	output = router.getADSLInfo
 rescue
-	output = Hash["error" => "Could not get ADSL info"]
+	output = Hash[:error => "Could not get ADSL info"]
 end
 
 # Encode to JSON
